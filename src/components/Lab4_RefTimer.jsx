@@ -29,10 +29,13 @@ export default function Lab4RefTimer() {
     return () => clearInterval(timerRef.current);
   }, []);
 
+  const minutes = String(Math.floor(count / 60)).padStart(2, '0');
+  const seconds = String(count % 60).padStart(2, '0');
+
   return (
     <div>
       <p className="status">상태: {running ? 'Running' : 'Stopped'}</p>
-      <div className="count">{count}</div>
+      <div className="count">{minutes}:{seconds}</div>
       <div className="controls">
         <button onClick={start} disabled={running}>Start</button>
         <button className="secondary" onClick={stop} disabled={!running}>Stop</button>

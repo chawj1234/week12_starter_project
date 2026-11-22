@@ -20,10 +20,13 @@ export default function Lab2TimerControl() {
     setCount(0);
   };
 
+  const minutes = String(Math.floor(count / 60)).padStart(2, '0');
+  const seconds = String(count % 60).padStart(2, '0');
+
   return (
     <div>
       <p className="status">상태: {running ? 'Running' : 'Stopped'}</p>
-      <div className="count">{count}</div>
+      <div className="count">{minutes}:{seconds}</div>
       <div className="controls">
         <button onClick={() => setRunning(true)} disabled={running}>Start</button>
         <button className="secondary" onClick={() => setRunning(false)} disabled={!running}>Stop</button>
