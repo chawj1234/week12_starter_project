@@ -25,8 +25,8 @@ npm run dev
 5. LAB 2와 LAB 4에서 Timer를 관리하는 방식의 차이는?: LAB 2는 running 상태 변화에 따라 useEffect가 타이머를 켜고 끄고, LAB 4는 timerRef에 타이머 ID를 넣어두고 버튼 클릭 함수에서 직접 켜고 끈다.
 
 ## Project Structure: App.jsx와 주요 Lab 컴포넌트의 역할
-- App.jsx: 전체 화면과 탭 전환을 담당한다. 선택한 LAB 컴포넌트만 보여주고 탭을 바꾸면 이전 LAB은 화면에서 사라진다.
-- Lab1_EffectTimer.jsx: 처음 열리면 useEffect로 1초마다 count를 올리고 사라질 때 타이머를 정리한다.
+- App.jsx: 전체 화면과 탭 전환을 담당한다.
+- Lab1_EffectTimer.jsx: useEffect로 1초마다 count를 올리고 사라질 때 타이머를 정리한다.
 - Lab2_TimerControl.jsx: running 상태와 useEffect를 연결해서 Start, Stop, Reset 기능을 처리한다.
 - Lab3_InputFocus.jsx: useRef로 input 요소에 직접 접근해서 Focus와 Clear 버튼을 동작시킨다.
 - Lab4_RefTimer.jsx: useRef에 타이머 ID를 저장해두고 Start, Stop, Reset 함수에서 직접 타이머를 제어한다.
@@ -85,3 +85,9 @@ const stop = () => {
 - Cleanup을 사용하지 않으면 어떤 문제가 발생할 수 있는가?: 컴포넌트가 사라지거나 Effect가 다시 실행되어도 이전 타이머가 계속 남아서 돌아간다. 그래서 타이머가 중복 실행되거나 숫자가 더 빨리 올라가는 문제가 생긴다.
 - useState와 useRef의 가장 중요한 차이는?: 값이 바뀔 때 화면을 다시 그리는지 여부다. useState는 화면을 다시 그리고, useRef는 다시 그리지 않는다.
 - LAB 2와 LAB 4의 Timer 관리 방식은 어떻게 다른가?: LAB 2는 running 상태를 바꾸면 useEffect가 알아서 타이머를 만들고 정리한다. LAB 4는 timerRef에 타이머 ID를 저장해두고 start, stop 버튼 함수에서 직접 타이머를 제어하며, useEffect는 화면에서 사라질 때 정리하는 용도로만 쓴다.
+
+## 변경 내용
+- App.jsx에서 제목을 12주차 Hooks 실습으로 바꾸고 설명을 useEffect와 useRef 실습으로 수정했다.
+- App.css에서 전체 배경색을 바꾸고 탭 테두리를 점선으로 변경했다. 탭 배경색, 테두리색, 글자색도 수정했다.
+- 타이머를 00:00 형식으로 표시하게 바꿨다.
+
