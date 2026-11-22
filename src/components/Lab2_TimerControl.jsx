@@ -1,4 +1,4 @@
-야ㅣ야 import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // LAB 2 (Slide 10): Timer Start / Stop / Reset
 export default function Lab2TimerControl() {
